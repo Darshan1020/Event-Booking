@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - EventHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link active">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-toggle"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Upcoming Events</h1>
+            <p>Discover and book tickets for amazing events happening in your area</p>
+        </div>
+    </section>
+
+    <!-- Events Grid -->
+    <section class="events-section">
+        <div class="container">
+            <div class="events-grid">
+                <div class="event-card" data-event="summer-music-festival">
+                    <div class="event-image">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="event-content">
+                        <h3>Summer Music Festival</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> July 15, 2024</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 2:00 PM - 10:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Central Park</p>
+                        <p class="event-price"><i class="fas fa-ticket-alt"></i> $45</p>
+                        <p class="event-description">Join us for an amazing day of live music, food, and fun! Featuring top artists and local bands.</p>
+                        <div class="event-actions">
+                            <button class="btn btn-primary" onclick="showEventDetails('summer-music-festival')">View Details</button>
+                            <button class="btn btn-secondary" onclick="bookEvent('Summer Music Festival', 45)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-event="tech-workshop">
+                    <div class="event-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="event-content">
+                        <h3>Tech Workshop</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> August 5, 2024</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Innovation Center</p>
+                        <p class="event-price"><i class="fas fa-ticket-alt"></i> $75</p>
+                        <p class="event-description">Learn the latest in web development and AI technologies. Hands-on workshop with expert instructors.</p>
+                        <div class="event-actions">
+                            <button class="btn btn-primary" onclick="showEventDetails('tech-workshop')">View Details</button>
+                            <button class="btn btn-secondary" onclick="bookEvent('Tech Workshop', 75)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-event="food-wine-festival">
+                    <div class="event-image">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="event-content">
+                        <h3>Food & Wine Festival</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> September 20, 2024</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 12:00 PM - 8:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Downtown Plaza</p>
+                        <p class="event-price"><i class="fas fa-ticket-alt"></i> $60</p>
+                        <p class="event-description">Taste the finest cuisines from around the world. Wine tasting and cooking demonstrations included.</p>
+                        <div class="event-actions">
+                            <button class="btn btn-primary" onclick="showEventDetails('food-wine-festival')">View Details</button>
+                            <button class="btn btn-secondary" onclick="bookEvent('Food & Wine Festival', 60)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-event="art-exhibition">
+                    <div class="event-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="event-content">
+                        <h3>Modern Art Exhibition</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> October 10, 2024</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 10:00 AM - 6:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Art Gallery</p>
+                        <p class="event-price"><i class="fas fa-ticket-alt"></i> $25</p>
+                        <p class="event-description">Explore contemporary art from local and international artists. Guided tours available.</p>
+                        <div class="event-actions">
+                            <button class="btn btn-primary" onclick="showEventDetails('art-exhibition')">View Details</button>
+                            <button class="btn btn-secondary" onclick="bookEvent('Modern Art Exhibition', 25)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-event="fitness-bootcamp">
+                    <div class="event-image">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="event-content">
+                        <h3>Fitness Bootcamp</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> November 5, 2024</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 7:00 AM - 9:00 AM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Community Center</p>
+                        <p class="event-price"><i class="fas fa-ticket-alt"></i> $30</p>
+                        <p class="event-description">High-intensity workout session with professional trainers. All fitness levels welcome.</p>
+                        <div class="event-actions">
+                            <button class="btn btn-primary" onclick="showEventDetails('fitness-bootcamp')">View Details</button>
+                            <button class="btn btn-secondary" onclick="bookEvent('Fitness Bootcamp', 30)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-event="comedy-night">
+                    <div class="event-image">
+                        <i class="fas fa-laugh"></i>
+                    </div>
+                    <div class="event-content">
+                        <h3>Comedy Night</h3>
+                        <p class="event-date"><i class="fas fa-calendar"></i> December 15, 2024</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 8:00 PM - 11:00 PM</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Comedy Club</p>
+                        <p class="event-price"><i class="fas fa-ticket-alt"></i> $35</p>
+                        <p class="event-description">An evening of laughter with top comedians. Food and drinks available.</p>
+                        <div class="event-actions">
+                            <button class="btn btn-primary" onclick="showEventDetails('comedy-night')">View Details</button>
+                            <button class="btn btn-secondary" onclick="bookEvent('Comedy Night', 35)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Modal -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-content">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Your Event</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="event-name">Event Name:</label>
+                    <input type="text" id="event-name" name="eventName" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="event-price">Price:</label>
+                    <input type="text" id="event-price" name="eventPrice" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="customer-name">Full Name:</label>
+                    <input type="text" id="customer-name" name="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email:</label>
+                    <input type="email" id="customer-email" name="customerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Phone:</label>
+                    <input type="tel" id="customer-phone" name="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="ticket-quantity">Number of Tickets:</label>
+                    <select id="ticket-quantity" name="ticketQuantity" required>
+                        <option value="">Select quantity</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="total-price">Total Price:</label>
+                    <input type="text" id="total-price" name="totalPrice" readonly>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeBookingModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EventHub</h3>
+                    <p>Your premier destination for event booking and discovery.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@eventhub.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
